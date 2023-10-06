@@ -285,8 +285,6 @@ bool isValidParenthesis(string expression) {
     }
 }
 
-*/
-
 // <********************************************************************************************>
 // Question: Insert An Element At Its Bottom in a given Stack
 
@@ -310,3 +308,38 @@ stack<int> pushAtBottom(stack<int> &myStack, int x) {
     solve(myStack, x);
     return myStack;
 }
+*/
+
+// <********************************************************************************************>
+// Question: Reverse Stack using Recursion.
+
+void insertAtBottom(stack<int> &stack, int element) {
+    // Base Case:
+    if(stack.empty()) {
+        stack.push(element);
+        return;
+    }
+
+    int num = stack.top();
+    stack.pop();
+
+    // Recursive Call:
+    insertAtBottom(stack, element);
+    stack.push(num);
+}
+void reverseStack(stack<int> &stack) {
+    // Base Case:
+    if(stack.empty()) {
+        return;
+    }
+
+    int num = stack.top();
+    stack.pop(); 
+
+    // Recursive Case:
+    reverseStack(stack);
+
+    // insertAtBottom(stack, element);
+
+}
+
