@@ -308,7 +308,7 @@ stack<int> pushAtBottom(stack<int> &myStack, int x) {
     solve(myStack, x);
     return myStack;
 }
-*/
+
 
 // <********************************************************************************************>
 // Question: Reverse Stack using Recursion.
@@ -340,6 +340,36 @@ void reverseStack(stack<int> &stack) {
     reverseStack(stack);
 
     // insertAtBottom(stack, element);
+}
+*/
+
+// <********************************************************************************************>
+// Question: Sort a Stack
+
+void sortedInsert(stack<int> &stack, int num) {
+    // Base Case:
+    if(stack.empty() || (!stack.empty() && stack.top() < num)) {
+        stack.push(num);
+        return;
+    }
+    int n = stack.top();
+    stack.pop();
+
+    // Recursive Case:
+    sortedInsert(stack, num);
+    stack.push(num);
 
 }
+void sortStack(stack<int> &stack) {
+    // Base Case:
+    if(stack.empty()) {
+        return;
+    }
 
+    int num = stack.top();
+    stack.pop();
+
+    // Recursive Case:
+    sortStack(stack);
+    // sortedInsert(stack, num);
+}
