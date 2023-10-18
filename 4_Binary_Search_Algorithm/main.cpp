@@ -72,9 +72,9 @@ int main()
 
     return 0;
 }
-*/
 
-/*Minimum Common value (2540) Leet code (Easy Level)*/
+
+/*                          Minimum Common value (2540) Leet code (Easy Level)
 
 // Input: nums1 = [1,2,3], nums2 = [2,4]
 // Output: 2
@@ -98,9 +98,41 @@ class Solution {
                 e++;
             }
             return -1;
-
         }
-
-
 };
+
+
+/*******************Problem 69 of LC Sqrt(x)**************************************/
+// Input: x = 4
+// Output: 2
+// Explanation: The square root of 4 is 2, so we return 2.
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public: 
+        int mySqrt(int x) {
+            if(x == 0) 
+                return x;
+        
+        int first = 1, last = x;
+        while(first <= last) {
+            int mid = first + (last - first) / 2;
+
+            if(mid = x / mid) 
+                return mid;
+
+            else if(mid * mid > x)
+                last =  mid - 1;
+
+            else {
+                 first = mid + 1;
+            }
+        }
+        return last;
+    }
+};
+
+
 
