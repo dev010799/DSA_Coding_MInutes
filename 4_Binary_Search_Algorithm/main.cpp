@@ -21,7 +21,8 @@ using namespace std;
 5. Binary Search is Fast & Efficient.
 6. The Only condition required is Search space is in Sorted order.
 7. Or we can say search space is should be in Monotonic Way(i.e. Either in Increasing order or Decreasing Order.)
-*/
+
+// *************************************************************************************************************************
 
 int Binary_Search(int arr[], int n, int key)
 {
@@ -71,3 +72,35 @@ int main()
 
     return 0;
 }
+*/
+
+/*Minimum Common value (2540) Leet code (Easy Level)*/
+
+// Input: nums1 = [1,2,3], nums2 = [2,4]
+// Output: 2
+// Explanation: The smallest element common to both arrays is 2, so we return 2.
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+    public: 
+        int getCommon(vector<int>& nums1, vector<int>& nums2) {
+            int s = 0, e = 0;
+
+            while(s < nums1.size() && e < nums2.size()) {
+                if(nums1[s] == nums2[e]) 
+                return nums1[s];
+                else if(nums1[s] < nums2[e])
+                s++;
+                else
+                e++;
+            }
+            return -1;
+
+        }
+
+
+};
+
